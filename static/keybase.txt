@@ -1,0 +1,69 @@
+==================================================================
+https://keybase.io/tibordp
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://ojdip.net
+  * I am tibordp (https://keybase.io/tibordp) on keybase.
+  * I have a public key with fingerprint 780F D4E8 FA78 75C0 4887  3FF1 775A 0569 2468 6C1B
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "010138da78ab7a689e46b26df6cbd7bfa423c4ffb98237e6cfe04cec303694b109890a",
+            "fingerprint": "780fd4e8fa7875c048873ff1775a056924686c1b",
+            "host": "keybase.io",
+            "key_id": "775a056924686c1b",
+            "kid": "010138da78ab7a689e46b26df6cbd7bfa423c4ffb98237e6cfe04cec303694b109890a",
+            "uid": "344ccaeddd4c656a9425a823fd334919",
+            "username": "tibordp"
+        },
+        "service": {
+            "hostname": "ojdip.net",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1479237899,
+    "expire_in": 157680000,
+    "prev": "d164aade0c48388aa4d8055fd1d60be5864d88243c501393a5947b5af491f799",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.58
+Comment: https://keybase.io/crypto
+
+yMIiAnicrVJdSBVBGL03y1+EEkKRMlrCgtR2787uzl77fTDRtHwRLhldZmdmvaO2
+e9td/1IhkIoogurJCEKswCIi60EhzdSiSAqKColQ0yQjCAUzrIdmxd56bF6GOZxz
+5pyPbyQ9IZAabDxceABXfbOCLx5frg9EtqO0FsGwSbMQbhFq6fJF6wh1vWgtI0JY
+ECVRkiFBGkSGhlSoU6AaIZWYKjaIZpgIhGQMTNPQYUjWqIpNKgJMsSzKqg4MSdSh
+LiIhTzCZVU2duMMsj9tqUDQJoNDkxpqCRQChJpumpGkKEhVVDwEVqlgyuDBmu76C
+hzOQSwuYzTH+iC7H+wf/P+euX7aTAcAYUUIIwKqiIh2EFMSVJpFloEu6T3SpY6Fj
+lLM9ZtgOiQtteQIHGxim/lz9IisEu4aweIFFPa6LO7ZnY7uOwzHPi7thX+Y1x31e
+IzWiKw5Rg1mEz5ArGqjjMtsSwhJnYo/5lhLQdF4E6nqeQJvizKFR5jMUTYUiP/4/
+tIFbEkkFCBEqYgBlCBECBIqKYhKJqKJBFahyAIaAjBU+QV1Gig40Q0Emr2lqut/U
+pcctWwgrPCaq5pYuq7aQV+9QoW1o8MjqQDA1kLhmlb9bgdSUtX837s6JpF9J3T+b
+U55WWS+HM4qjO9WiZ8H6ks4Lt55Pb4tlfy8vSqvML8l7Gvl8rWeqfcNS0tjW7rH0
+0O3564vd8e0Vh9oHDvVmXn3UP5B5tO/G4Om0X+9HZzdnfry4WJEcGJ/NfZC9UJy4
+sHEut2n9i+GThW4l7u+b3LFYmaMvdbRfOrNXuVlWPNPFOiNTu9f17jsV7CqaHjuZ
+BWFbck36xjcl7RdXVcSel314G4ncvJ//5FP50JdNI/MdW+49O9vfMwFa75V7rbR0
+IuNd7cErOXsz60Zbd/X+LD/9o6kssKe6JyvRWurYXzgZ2bF57HhB7NbXmYcJd6vY
+XOO5jPPX2fhrp+xVqc1+/wH4Rzv3
+=yuNt
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/tibordp
+
+==================================================================
+
