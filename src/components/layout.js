@@ -10,7 +10,7 @@ const Layout = ({ location, title, children }) => {
   const pageNumber = location.pathname.split("/").filter(Boolean).pop()
   const isPaginatedPath = pageNumber && Boolean(pageNumber.match(/^[0-9]+$/))
   let header
-  console.log(location)
+
   if (isRootPath || isPaginatedPath) {
     header = (
       <h1
