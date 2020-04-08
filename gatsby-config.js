@@ -7,7 +7,7 @@ module.exports = {
     },
     description:
       "Ojdip.net - My thoughts on programming, networking and technology in general.",
-    siteUrl: "https://ojdip.net/",
+    siteUrl: "https://ojdip.net",
     defaultImage: "/images/ojdip.png",
     social: {
       github: "tibordp",
@@ -81,7 +81,27 @@ module.exports = {
         icon: "content/assets/ojdip.png",
       },
     },
-    "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-plugin-next-seo",
+      options: {
+        titleTemplate: "%s | Tibor Djurica Potpara",
+        openGraph: {
+          type: "website",
+          locale: "en_IE",
+          url: "https://ojdip.net",
+          site_name: "Tibor Djurica Potpara",
+          images: [
+            {
+              url: "https://ojdip.net/images/ojdip.png",
+            },
+          ],
+        },
+        twitter: {
+          handle: "@tibordp",
+          cardType: "summary_large_image",
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-typography",
       options: {
@@ -94,6 +114,7 @@ module.exports = {
         bucketName: "ojdip-net-blog",
         protocol: "https",
         hostname: "www.ojdip.net",
+        generateRedirectObjectsForPermanentRedirects: true,
       },
     },
     "gatsby-plugin-sitemap",

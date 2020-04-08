@@ -3,19 +3,31 @@ import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import { BlogPostJsonLd, GatsbySeo } from "gatsby-plugin-next-seo"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
+  const canonicalUrl = `${data.site.siteMetadata.siteUrl}${location.pathname}`
+  const description = post.frontmatter.description || post.excerpt
   const { previous, next } = pageContext
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
+      <GatsbySeo
         title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        description={description}
+        canonical={canonicalUrl}
+        openGraph={{
+          title: post.frontmatter.title,
+          description,
+          url: canonicalUrl,
+          type: "article",
+          article: {
+            publishedTime: post.frontmatter.dateRaw,
+          },
+        }}
       />
       <article>
         <header>
@@ -86,6 +98,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
+        author {
+          name
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -95,6 +111,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        dateRaw: date(formatString: "YYYY-MM-DD")
         description
       }
     }

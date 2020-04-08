@@ -2,17 +2,18 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Image from "gatsby-image"
 import { rhythm } from "../utils/typography"
 
 const AboutMePage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const author = data.site.siteMetadata.author
+  const canonicalUrl = `${data.site.siteMetadata.siteUrl}${location.pathname}`
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="About Me" />
+      <GatsbySeo title="About me" canonical={canonicalUrl} />
       <h1>About Me</h1>
       <div
         style={{
@@ -67,6 +68,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
         author {
           name
           summary
