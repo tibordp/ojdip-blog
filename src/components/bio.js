@@ -6,9 +6,8 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
-import { Link } from "gatsby"
 
 import { rhythm } from "../utils/typography"
 
@@ -41,8 +40,8 @@ const Bio = () => {
   return (
     <div
       style={{
-        display: `flex`,
-        alignItems: `center`,
+        display: "flex",
+        alignItems: "center",
       }}
     >
       <Image
@@ -52,15 +51,14 @@ const Bio = () => {
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
           minWidth: 50,
-          borderRadius: `100%`,
+          borderRadius: "100%",
         }}
         imgStyle={{
-          borderRadius: `50%`,
+          borderRadius: "50%",
         }}
       />
       <p style={{ margin: 0 }}>
-        Written by <strong>{author.name}</strong>, {author.summary}
-        {` `}
+        Written by <strong>{author.name}</strong>, {author.summary}{" "}
         <Link to="/about">About me</Link>
       </p>
     </div>

@@ -6,24 +6,26 @@ import { rhythm, scale } from "../utils/typography"
 import { FaEnvelope, FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa"
 
 const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
+  const isRootPath = location.pathname === `${__PATH_PREFIX__}/`
+  const pageNumber = location.pathname.split("/").filter(Boolean).pop()
+  const isPaginatedPath = pageNumber && Boolean(pageNumber.match(/^[0-9]+$/))
   let header
 
-  if (location.pathname === rootPath) {
+  if (isRootPath || isPaginatedPath) {
     header = (
       <h1
         style={{
           ...scale(1.5),
-          marginBottom: rhythm(1.5),
+          marginBottom: rhythm(0.75),
           marginTop: 0,
         }}
       >
         <Link
           style={{
-            boxShadow: `none`,
-            color: `inherit`,
+            boxShadow: "none",
+            color: "inherit",
           }}
-          to={`/`}
+          to={"/"}
         >
           {title}
         </Link>
@@ -38,10 +40,10 @@ const Layout = ({ location, title, children }) => {
       >
         <Link
           style={{
-            boxShadow: `none`,
-            color: `inherit`,
+            boxShadow: "none",
+            color: "inherit",
           }}
-          to={`/`}
+          to={"/"}
         >
           {title}
         </Link>
@@ -51,8 +53,8 @@ const Layout = ({ location, title, children }) => {
   return (
     <div
       style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
+        marginLeft: "auto",
+        marginRight: "auto",
         maxWidth: rhythm(36),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
@@ -61,17 +63,17 @@ const Layout = ({ location, title, children }) => {
       <main>{children}</main>
       <footer
         style={{
-          borderTop: `1px solid hsla(0,0%,0%,0.07)`,
-          display: `flex`,
-          justifyContent: `center`,
+          borderTop: "1px solid hsla(0,0%,0%,0.07)",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
         <nav
           style={{
             maxWidth: rhythm(12),
-            justifyContent: `space-between`,
+            justifyContent: "space-between",
             flex: 1,
-            display: `flex`,
+            display: "flex",
             fontSize: rhythm(1.25),
             padding: rhythm(0.75),
           }}

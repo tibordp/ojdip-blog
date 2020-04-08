@@ -16,10 +16,9 @@ const AboutMePage = ({ data, location }) => {
       <h1>About Me</h1>
       <div
         style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `center`,
-          marginBottom: rhythm(2.5),
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
         }}
       >
         <Image
@@ -28,10 +27,10 @@ const AboutMePage = ({ data, location }) => {
           style={{
             marginRight: rhythm(1),
             marginBottom: rhythm(1),
-            borderRadius: `100%`,
+            borderRadius: "100%",
           }}
           imgStyle={{
-            borderRadius: `100%`,
+            borderRadius: "100%",
           }}
         />
         <section style={{ flex: 1, minWidth: rhythm(12) }}>

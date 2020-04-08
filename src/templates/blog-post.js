@@ -30,7 +30,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <p
             style={{
               ...scale(-1 / 5),
-              display: `block`,
+              display: "block",
               marginBottom: rhythm(1),
             }}
           >
@@ -51,11 +51,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <nav>
         <ul
           style={{
-            display: `flex`,
-            flexWrap: `wrap`,
+            display: "flex",
+            flexWrap: "wrap",
             marginTop: rhythm(1),
-            justifyContent: `space-between`,
-            listStyle: `none`,
+            justifyContent: "space-between",
+            listStyle: "none",
             padding: 0,
           }}
         >
