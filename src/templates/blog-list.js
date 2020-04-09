@@ -5,6 +5,7 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import { rhythm } from "../utils/typography"
+import { getArticleUrl } from "../utils/url"
 
 const BlogIndex = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -22,7 +23,7 @@ const BlogIndex = ({ data, pageContext, location }) => {
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
-        const articlePath = `/${node.frontmatter.urlDate}${node.fields.slug}`
+        const articlePath = getArticleUrl(node)
         return (
           <div key={node.fields.slug}>
             <h3

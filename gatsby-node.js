@@ -1,5 +1,6 @@
 const path = require("path")
 const { createFilePath } = require("gatsby-source-filesystem")
+const { getArticleUrl } = require("./src/utils/url.js")
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions
@@ -37,7 +38,7 @@ exports.createPages = ({ graphql, actions }) => {
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
-      const canonicalPath = `/${post.node.frontmatter.urlDate}${post.node.fields.slug}`
+      const canonicalPath = getArticleUrl(post.node)
       createPage({
         path: canonicalPath,
         component: blogPost,
