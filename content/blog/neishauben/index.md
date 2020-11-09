@@ -1,6 +1,6 @@
 ---
 title: "rubiks.c + Emscripten + Three.js = Neishauben"
-date: "2020-11-27"
+date: "2020-10-27"
 ---
 
 *TLDR: I finished a project I started a decade ago, a Rubik's cube solver and web UI, see it in action [here](https://tibordp.github.io/neishauben)*
