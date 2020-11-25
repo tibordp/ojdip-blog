@@ -305,6 +305,6 @@ Building a physical gadget that ended up actually being usable was a great exper
 
 For my next electronics project, though, I'll probably try to play with less capable chips, like ATtiny85 or even build something out of 7400-series ICs like Ben. ESP32 is great and all, but with all its capabilities it feels almost as powerful as Raspberry Pi, which is awesome for actually building useful projects, but less exciting from the learning perspective, as the Linux environment makes it a lot like programming for powerful servers, PCs and smartphones. And as the retro games and the demoscene nicely demonstrate, constraint is the mother of invention. Of course there is a sweet spot abstraction layer to be found for everyone, and I think I have settled in mine, at least professionally, I do think it's important (and fun!) to have at least some familiarity on all the levels, from the serverless programming frameworks down to actual silicon.
 
-Of course, whole source code is [available on GitHub](https://tibordp.github.io/cube-timer), both for the Arduino code and the demo app. And finally, here's a small demo of the whole thing
+Of course, whole source code is [available on GitHub](https://github.com/tibordp/cube-timer), both for the Arduino code and the demo app. And finally, here's a small demo of the whole thing
 
 `youtube: G7zfDGPaEZs`
