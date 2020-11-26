@@ -186,11 +186,12 @@ This seemed to solve my problem and I decided to run with this approach. Note, h
 
 ## Hardware build
 
-I started the build on breadboards, and as Ben Eater's breadboards look very pretty, so I tried my best to cut the jumper wires to length. I soon realized that the ESP32 board I had was too wide to fit on a standard one and still leave room on both sides to connect the pins, so I had to route some of the jumper wires under the board. I was inserting and removing the module a lot and I was really afraid that I would eventually snap it in half, so I decided to just connect some jumper extensions to all the pins I may need in the future and leave it in.
+The timer is powered by a 3.3V coming out of the ESP32 board's regulator. I added 4 push buttons for various functions, 2 status LEDs and a rotary encoder for adjusting things like inspection time ands potential other uses. I had a lot of trouble with writing robust debouncing logic for the rotary encoder, so I eventually scrapped the approach and replaced it with a regular analog potentiometer. The signal from the potentiometer was also quite noisy, but a combination of adding a small capacitor between signal and ground, multi-sampling and hysteresis made it work really well (plus I like the smooth feel of analog potentiometers).
 
-The whole board is powered by a 3.3V coming out of the ESP32 board's regulator. I added 4 push buttons for various functions, 2 status LEDs and a rotary encoder for adjusting things like inspection time ands potential other uses. I had a lot of trouble with writing robust debouncing logic for the rotary encoder, so I eventually scrapped the approach and replaced it with a regular analog potentiometer. The signal from the potentiometer was also quite noisy, but a combination of adding a small capacitor between signal and ground, multi-sampling and hysteresis made it work really well (plus I like the smooth feel of analog potentiometers).
+This is the schematic and the bill of materials
 
-This is the final bill of materials:
+[![Schematic](./images/schematic.svg)](./images/schematic.svg)
+
 
 - 2x breadboard
 - 1x ESP32 DevKitC dev board
@@ -204,6 +205,8 @@ This is the final bill of materials:
 - 1x 0.01μF capacitor
 - 1x resealing tab from a bag of coffee beans 😇 (copper tape would be better, but I didn't have any)
 - Some length of 22 AWG jumper wires of various colors
+
+I started the build on breadboards, and as Ben Eater's breadboards look very pretty, so I tried my best to cut the jumper wires to length. I soon realized that the ESP32 board I had was too wide to fit on a standard one and still leave room on both sides to connect the pins, so I had to route some of the jumper wires under the board. I was inserting and removing the module a lot and I was really afraid that I would eventually snap it in half, so I decided to just connect some jumper extensions to all the pins I may need in the future and leave it in.
 
 A funny coincidence is that the total cost of all the components ended up being around 15€, which is in the same ballpark as what commercial cubing timers go for.
 
