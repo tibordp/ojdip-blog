@@ -3,7 +3,7 @@ title: "Building a Bluetooth speedcubing timer with ESP32"
 date: "2020-11-24"
 ---
 
-I had an electronics kit when I was a kid and I learned to do all kinds of electromechanical circuits and even some simple circuits with transistors, but I never completed a substantial electronics project. I recently got inspired by [Ben Eater's most excellent 8-bit breadboard computer series on YouTube](https://www.youtube.com/watch?v=HyznrdDSSGM&list=PLowKtXNTBypGqImE405J2565dvjafglHU) and decided that the time is ripe to get into hobby electronics a bit more seriously. After a bit of an Amazon shopping spree, I got myself the essentials, like a multimeter, a bench power supply, a soldering station, an large assortment of basic electronic components, some breadboards, perfboards and jumper wires and I put together this blinky "Hello, World!" to get back to speed with my neglected soldering skills and re-learn how bipolar transistors work.
+I had an electronics kit when I was a kid and I learned to do all kinds of electromechanical circuits and even some simple circuits with transistors, but I never completed a substantial electronics project. I recently got inspired by [Ben Eater's most excellent 8-bit breadboard computer series on YouTube](https://www.youtube.com/watch?v=HyznrdDSSGM&list=PLowKtXNTBypGqImE405J2565dvjafglHU) and decided that the time is ripe to get more into hobby electronics. After a bit of an Amazon shopping spree, I got myself the essentials, like a multimeter, a bench power supply, a soldering station, an large assortment of basic electronic components, some breadboards, perfboards and jumper wires and I put together this blinky "Hello, World!" to get back to speed with my neglected soldering skills and re-learn how bipolar transistors work.
 
 ![Astable multivibrator](./images/multivibrator.png)
 
@@ -127,22 +127,26 @@ void stateMachine(long currentTime) {
             if (touched) {
                 state = STATE_INSPECTION;
             }
+            break;
         case STATE_INSPECTION:
             if (!touched) {
                 solvingStarted = currentTime;
                 state = STATE_SOLVING;
             }       
+            break;
         case STATE_SOLVING:
             if (touched) {
                 solvingFinished = currentTime;
-                state = STATE_SOLVING_1;
+                state = STATE_SOLVING_FINISHED;
             }     
+            break;
         // Extra state to ensure we are not touching the sensor when going back 
         // to initial state, as that would immediately restart the timer.
         case STATE_SOLVING_FINISHED:
             if (!touched) {
                 state = STATE_DEFAULT;
             }
+            break;
     }
 }
 
@@ -150,7 +154,7 @@ void loop()
     long currentTime = millis();
     stateMachine(currentTime);
     if (solvingFinished) {
-        Serial.println(solvingFinished - solvingStarted);
+        Serial.println(solvingFinished - solvingStarted, DEC);
         solvingFinished = 0;
     }
     if (touched && touchRead(TOUCHPAD) > 50) {
@@ -257,7 +261,7 @@ BLECharacteristic *characteristic;
 uint32_t counter;
 
 void setup() {
-  BLEDevice::init("CubeTimer"); // Give it a name
+  BLEDevice::init("CubeTimer");
   BLEServer *pServer = BLEDevice::createServer();
   BLEService *pService = pServer->createService(SERVICE_UUID);
   characteristic = pService->createCharacteristic(
