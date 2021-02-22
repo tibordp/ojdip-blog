@@ -15,7 +15,7 @@ If there are routes missing that should not be, there is little that can be done
 
 We would like to have a tool to perform a binary difference operation of two sets of IP address ranges (subnets) in an efficient manner. Ideally, the tool would also be able to perform other set operations, such as  union or intersection, so we can merge several ISP's advertised routes prior to comparing it with a single ISP's route table and so on.
 
-What we want to achieve is perhaps best illustrated by an illustration: ![](images/shema.png "shema")
+What we want to achieve is perhaps best illustrated by an illustration: ![](images/shema.png)
 
 ## Analysis of the problem
 
@@ -41,7 +41,7 @@ The algorithm used for comparison is very simple and as stated above runs in lin
 
 1. Iterate through all the entries in both routing tables and mark the start and the end of each subnet (_all-zeros_ and _all-ones_ addresses of a subnet). Insert both of them into a single array, while noting their type (_startA_, _startB_, _endA_, _endB_)
 2. Sort the above array, ordered only by IP number.
-3. Iterate through the array and keep two counters, say $c_A$and $c_B$_. _Each time, \_startX_ marker is encountered, increase $c_X$and each time _endX_ is encountered, decrease it. ![](images/shema-alg.png "shema-alg")
+3. Iterate through the array and keep two counters, say $c_A$and $c_B$_. _Each time, \_startX_ marker is encountered, increase $c_X$and each time _endX_ is encountered, decrease it. ![](images/shema-alg.png)
 4. If we are in the region, where $c_A > 0 \wedge c_B = 0$, we have found a IP range that is in A but not in B.
 
 The algorithm works well even with overlapping subnets, since the counter is simply going to be larger than one in that case. But even though the algorithm is simple, there are a few things to consider:
