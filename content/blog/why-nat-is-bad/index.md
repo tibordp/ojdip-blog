@@ -11,7 +11,7 @@ This is the frustration that web-services "feel" each time you connect to them v
 
 The central point of this article is the old adage, that NAT does not have anything to do with security. Ladies and gentlemen, I present you this:
 
-![](images/mikrotik-firewall.png "mikrotik-firewall")
+![](images/mikrotik-firewall.png)
 
 Even if you use public IP addresses and are thereby connected _"directly to the internet"_, just these 4 rules on a stateful firewall should give you the same degree of protection for the network as a typical consumer-grade NAT implementation. The stateful firewall is called stateful because it maintains some degree of internal state that is used to guide the decisions on what to do with an incoming packet. Let's make a breakdown of these four rules:
 

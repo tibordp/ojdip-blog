@@ -22,7 +22,7 @@ I chose an alternative approach for the second attempt. Instead of trying to fig
 
 I chose a very simple metric. For each combination of two letters in the alphabet, the program calculates the probability of one following another in a word as well as probabilities of single letters to be the first or the last ones in a word. I used wordlists provided by WinEdt that can be found [here](http://www.winedt.org/Dict/).
 
-![](images/french-analysis.png "french-analysis")
+![](images/french-analysis.png)
 
 Neighbouring letter analysis of the French lexicon. First row signifies the likelihood that a letter starts a word and the first column the likelihood that a letter ends it.
 

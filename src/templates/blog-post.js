@@ -7,6 +7,8 @@ import { rhythm, scale } from "../utils/typography"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { getArticleUrl } from "../utils/url"
 
+import "./blog.css"
+
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
